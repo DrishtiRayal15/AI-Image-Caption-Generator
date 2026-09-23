@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        AI Image Caption Generator
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for(
+            'static',
+            filename='css/style.css'
+        ) }}"
+    >
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <header>
+
+        <h1>
+            🖼️ AI Image Caption Generator
+        </h1>
+
+        <p class="subtitle">
+            Upload an image and let AI describe what it sees.
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <label
+            for="fileInput"
+            class="dropzone"
+            id="dropzone"
+        >
+
+            <span id="dropzoneText">
+                Click to upload or drag & drop an image
+            </span>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+                hidden
+            >
+
+        </label>
+
+
+        <div
+            class="preview-area"
+            id="previewArea"
+            hidden
+        >
+
+            <img
+                id="previewImage"
+                alt="Preview of uploaded image"
+            >
+
+        </div>
+
+
+        <button
+            id="generateBtn"
+            disabled
+        >
+            Generate Caption
+        </button>
+
+
+        <div
+            id="loading"
+            class="loading"
+            hidden
+        >
+
+            <div class="spinner"></div>
+
+            <span>
+                Analyzing image...
+            </span>
+
+        </div>
+
+
+        <div
+            id="resultBox"
+            class="result-box"
+            hidden
+        >
+
+            <h2>
+                Caption
+            </h2>
+
+            <p id="captionText"></p>
+
+        </div>
+
+
+        <div
+            id="errorBox"
+            class="error-box"
+            hidden
+        ></div>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Powered by BLIP (Salesforce)
+            · Hugging Face Transformers
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+<script
+    src="{{ url_for(
+        'static',
+        filename='js/main.js'
+    ) }}"
+></script>
+
+
+</body>
+
+</html>
